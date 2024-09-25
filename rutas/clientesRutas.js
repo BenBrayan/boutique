@@ -4,26 +4,26 @@ const clientesControlador = require('../controladores/clientesControlador');
 const clientesModelo = require('../modelos/clientesModelo');
 
 // Ruta para inicio de sesión
-router.post('/login', (req, res) => {
-    const { correo, contrasena } = req.body;
+// router.post('/login', (req, res) => {
+//     const { correo, contrasena } = req.body;
 
-    if (!correo || !contrasena) {
-        return res.status(400).json ({ message: 'Correo y contraseña son requeridos.' });
-    }
+//     if (!correo || !contrasena) {
+//         return res.status(400).json ({ message: 'Correo y contraseña son requeridos.' });
+//     }
 
-    clientesModelo.autenticarCliente(correo, contrasena, (err, cliente) => {
-        if (err) {
-            console.error('Error autenticando cliente:', err);
-            return res.status(500).json({ message: 'Error en el servidor.' });
-        }
-        if (!cliente) {
-            return res.status(401).json({ message: 'Datos incorrectas.' });
-        }
+//     clientesModelo.autenticarCliente(correo, contrasena, (err, cliente) => {
+//         if (err) {
+//             console.error('Error autenticando cliente:', err);
+//             return res.status(500).json({ message: 'Error en el servidor.' });
+//         }
+//         if (!cliente) {
+//             return res.status(401).json({ message: 'Datos incorrectas.' });
+//         }
 
-        // Aquí podrías establecer una sesión o token
-        res.status(200).json({ message: 'Inicio de sesión exitoso.' });
-    });
-});
+//         // Aquí podrías establecer una sesión o token
+//         res.status(200).json({ message: 'Inicio de sesión exitoso.' });
+//     });
+// });
 
 // Ruta para registrarse
 router.post('/registro', (req, res) => {

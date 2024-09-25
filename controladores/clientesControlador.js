@@ -19,22 +19,7 @@ const registrarCliente = (req, res) => {
     });
 };
 
-// Iniciar sesión
-const iniciarSesion = (req, res) => {
-    const { correo, contrasena } = req.body;
 
-    clientesModelo.autenticarCliente(correo, contrasena, (err, usuario) => {
-        if (err) {
-            return res.status(500).json({ error: 'Error al iniciar sesión' });
-        }
-        if (!usuario) {
-            return res.status(401).json({ error: 'Correo o contraseña incorrectos' });
-        }
-        // Iniciar sesión correctamente
-        req.session.usuario = usuario;
-        res.redirect('/eventos');  // Redirigir a la página principal del usuario
-    });
-};
 
 // Recuperar contraseña
 const recuperarContrasena = (req, res) => {
@@ -50,6 +35,5 @@ const recuperarContrasena = (req, res) => {
 
 module.exports = {
     registrarCliente,
-    iniciarSesion,
     recuperarContrasena
 };
