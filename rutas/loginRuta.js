@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const loginController = require('../controladores/loginControler');
-const clientesModelo = require('../modelos/clientesModelo');
+const loginController = require('../controladores/loginControler');;
 
 // Ruta para inicio de sesión
 router.post('/autenticacion', (req, res) => {
@@ -19,7 +18,7 @@ router.post('/autenticacion', (req, res) => {
             return res.status(500).json({ message: 'Error en el servidor.' });
         }
         if (!cliente) {
-            return res.status(401).json({ message: 'Datos incorrectas.' });
+            return res.redirect('/login.html');
         }
 
         // Aquí podrías establecer una sesión o token

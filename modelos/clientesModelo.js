@@ -14,7 +14,7 @@ const registrarCliente = (clienteData, callback) => {
     });
 };
 
-// // Función para autenticar un cliente
+// // // Función para autenticar un cliente
 // const autenticarCliente = (correo, contrasena, callback) => {
 //     debugger
 //     const sql = `SELECT * FROM clientes WHERE correo = ? AND contrasena = ?`;
