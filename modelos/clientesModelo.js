@@ -14,21 +14,21 @@ const registrarCliente = (clienteData, callback) => {
     });
 };
 
-// Función para autenticar un cliente
-const autenticarCliente = (correo, contrasena, callback) => {
-    debugger
-    const sql = `SELECT * FROM clientes WHERE correo = ? AND contrasena = ?`;
-    db.query(sql, [correo, contrasena], (err, result) => {
-        if (err) {
-            return callback(err);
-        }
-        if (result.length > 0) {
-            callback(null, result[0]);  // Usuario encontrado
-        } else {
-            callback(null, null);  // Usuario no encontrado
-        }
-    });
-};
+// // Función para autenticar un cliente
+// const autenticarCliente = (correo, contrasena, callback) => {
+//     debugger
+//     const sql = `SELECT * FROM clientes WHERE correo = ? AND contrasena = ?`;
+//     db.query(sql, [correo, contrasena], (err, result) => {
+//         if (err) {
+//             return callback(err);
+//         }
+//         if (result.length > 0) {
+//             callback(null, result[0]);  // Usuario encontrado
+//         } else {
+//             callback(null, null);  // Usuario no encontrado
+//         }
+//     });
+// };
 
 // Función para actualizar la contraseña de un cliente
 const actualizarContrasena = (correo, nuevaContrasena, callback) => {
@@ -56,7 +56,6 @@ const obtenerClientes = (callback) => {
 // Exportar las funciones para su uso en otros módulos
 module.exports = {
     registrarCliente,
-    autenticarCliente,
     actualizarContrasena,
     obtenerClientes
 };

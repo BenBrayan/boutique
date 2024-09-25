@@ -26,9 +26,11 @@ app.use(express.static(path.join(__dirname, 'vistas')));
 // Importar Rutas
 const clientesRutas = require ('./rutas/clientesRutas');
 const reservasRutas = require ('./rutas/reservasRutas');
+const loginRuta = require ('./rutas/loginRuta');
 
 app.use('/clientes', clientesRutas);
 app.use('/reservar', reservasRutas);
+app.use('/login', loginRuta);
 
 // Ruta para la página principal
 app.get('/', (req, res) => {
