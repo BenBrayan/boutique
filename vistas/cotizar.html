@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Boutique Angels</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/cotizar/coti.css" rel="stylesheet">
+
+    <style>
+        .whatsapp-btn {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.whatsapp-btn img {
+    width: 35px;
+    height: 35px;
+}
+
+    </style>
+</head>
+
+<body>
+    <a href="https://wa.me/573133670007" class="whatsapp-btn" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>    
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+            <img src="img/logo.png" alt="Logo" style="width: 130px; height: auto;">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav m-auto py-0">
+                    <a href="index.html"  class="nav-item nav-link active">Inicio</a>
+                    <a href="eventos.html" class="nav-item nav-link">Eventos</a>
+                    <a href="servicios.html" class="nav-item nav-link">Servicios</a>
+                    <a href="cotizar.html" class="nav-item nav-link">Cotizar</a>
+                    <a href="index.html#nosotros" class="nav-item nav-link">Nosotros</a>
+        
+                </div>
+                <a href="login.html" class="btn btn-primary d-none d-lg-block">Iniciar Sesión</a>
+                <a href="components/" class="btn btn-primary d-none d-lg-block ml-3">Reservar</a>
+            </div>
+        </nav>
+    </div>
+
+    <!--Formulario-->
+    <div class="cotizacion-container">
+        <h1>Cotizaciones </h1>
+        <form id="cotizadorForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fechaEvento">Fecha del Evento</label>
+                    <input type="date" id="fechaEvento" name="fechaEvento" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipoEvento">Tipo de Evento</label>
+                    <select id="tipoEvento" name="tipoEvento" required>
+                        <option value="">Seleccione un tipo de evento</option>
+                        <option value="boda">Boda</option>
+                        <option value="fiesta">Prom</option>
+                        <option value="quinceaneros">Quinceañeros</option>
+                        <option value="babyshower">Baby Shower</option>
+                        <option value="comunion">Primera Comunión</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="lugarEvento">Lugar del Evento</label>
+                    <input type="text" id="lugarEvento" name="lugarEvento" required>
+                </div>
+                <div class="form-group">
+                    <label for="numeroInvitados">Número de invitados</label>
+                    <input type="number" id="numInvitados" name="numInvitados" min="0" required>
+                </div>
+            </div>
+            
+            <h3>Servicios</h3>
+            <div class="servicios">
+                <label><input type="checkbox" id="musicaCheckbox" name="servicios" value="musica"> Música</label>
+                <label><input type="checkbox" id="decoracionCheckbox" name="servicios" value="decoracion"> Decoración</label>
+                <label><input type="checkbox" id="buffetCheckbox" name="servicios" value="buffet"> Buffet</label>
+            </div>
+            
+            <div id="musicaOptions" class="optionsContainer" style="display: none;">
+                <h4>Opciones de Música</h4>
+                <select id="musicaSelect" name="musica">
+                    <option value="">Seleccione un tipo de música</option>
+                    <option value="comunion">Música para Primeras Comuniones (Religiosa y Alegre)</option>
+                    <option value="babyshower">Música para Baby Showers (Suave, Alegre y Familiar)</option>
+                    <option value="quinceaneros">Música para Quinceañeros (Pop, Baladas y Música Latina)</option>
+                    <option value="juvenil">Música para Fiesta Juvenil (Hip-Hop y Electrónica)</option>
+                    <option value="bodas">Música para Bodas (Romántica y Clásica)</option>
+                    <option value="cumpleanos">Música para Fiesta de Cumpleaños (Pop y Dance)</option>
+                </select>
+                <div id="musicaDetails" class="details"></div>
+            </div>
+            
+            <div id="decoracionOptions" class="optionsContainer" style="display: none;">
+                <h4>Opciones de Decoración</h4>
+                <select id="decoracionSelect" name="decoracion">
+                    <option value="">Seleccione un tipo de decoración</option>
+                    <option value="princesas">Decoración de Princesas</option>
+                    <option value="floral">Decoración Floral</option>
+                    <option value="hadas">Decoración Temática Hadas</option>
+                    <option value="neon">Decoración Temática Neón</option>
+                </select>
+                <div id="decoracionDetails" class="details"></div>
+            </div>
+            
+            <div id="buffetOptions" class="optionsContainer" style="display: none;">
+                <h4>Opciones de Buffet</h4>
+                <select id="buffetSelect" name="buffet">
+                    <option value="">Seleccione un buffet</option>
+                    <option value="mediterraneo">Buffet Mediterráneo para Evento Corporativo</option>
+                    <option value="mexicano">Buffet Mexicano para Fiesta Familiar</option>
+                    <option value="brunch">Buffet de Brunch para Reunión Social</option>
+                    <option value="internacional">Buffet Internacional para Boda Elegante</option>
+                    <option value="vegano">Buffet Vegano para Evento Comunitario</option>
+                </select>
+                <div id="buffetDetails" class="details"></div>
+            </div>
+            <button type="button" id="cotizarButton">Cotizar</button>
+            <div id="totalCotizacion" style="display: none;"></div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
+  
+  
+    <!-- Footer -->
+    <div class="footer container-fluid position-relative bg-dark py-5" style="margin-top: 90px;">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-lg-6 pr-lg-5 mb-5">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="mb-3 text-white"><span class="text-primary">Boutique</span> Angels</h1>
+                    </a>
+                    <p>Nosotros realizamos los mejores eventos</p>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>Paipa, Colombia</p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+57 3133677007</p>
+                    <p><i class="fa fa-envelope mr-2"></i>boutique@gmail.com</p>
+                    <div class="d-flex justify-content-start mt-4">
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href=><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="https://www.facebook.com/boutiqueangels.paipa"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 pl-lg-5">
+                    <div class="row">
+                        <div class="col-sm-6 mb-5">
+                            <h5 class="text-white text-uppercase mb-6">Inicio</h5>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+                                <a class="text-white-50 mb-2" href="eventos.html"><i class="fa fa-angle-right mr-2"></i>Eventos</a>
+                                <a class="text-white-50 mb-2" href="servicios.html"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
+                                <a class="text-white-50 mb-2" href="cotizar.html"><i class="fa fa-angle-right mr-2"></i>Cotiza</a>
+                                <a class="text-white-50" href="contactanos.html"><i class="fa fa-angle-right mr-2"></i>Contactanos</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 mb-5">
+                            <h5 class="text-white text-uppercase mb-6">Registrarse</h5>
+                            <div class="w-100">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-light" style="padding: 20px;" placeholder="Email ">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary px-4">Enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-light border-top py-4" style="border-color: rgba(256, 256, 256, .15) !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                    <p class="m-0 text-white">&copy; <a href="#">Boutique Angels</a>. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Termina -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/js/main.js"></script>
+    <script src="/js/cotizar/coti.js"></script>

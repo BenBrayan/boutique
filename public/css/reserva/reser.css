@@ -1,0 +1,119 @@
+.form-container {
+    max-width: 700px; /* Ajuste del ancho del formulario */
+    margin: 0 auto;
+    padding: 20px;
+    background: #f7f2f2; /* Fondo gris claro para el formulario */
+    border-radius: 8px; /* Bordes más redondeados */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); /* Sombra menos prominente */
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 22px; 
+    font-weight: 400;
+    text-align: center; 
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px; 
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 10px; /* Mayor padding para campos */
+    margin-bottom: 15px; /* Espacio adicional entre los campos */
+    border-radius: 6px; /* Bordes redondeados en los campos */
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el width */
+    transition: border-color 0.3s ease-in-out; /* Transición suave para el borde */
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    border-color: #c5a44f; /* Borde dorado al enfocar el campo */
+    outline: none;
+}
+
+.form-container button {
+    background: #c5a44f; /* Fondo dorado para el botón */
+    color: #fff;
+    border: 2px solid #c5a44f; /* Borde dorado */
+    border-radius: 4px; /* Bordes redondeados en el botón */
+    cursor: pointer;
+    font-size: 14px; /* Tamaño del texto más pequeño */
+    padding: 8px; /* Padding reducido */
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; 
+}
+
+.form-container button:hover {
+    background: #c5a44f; /* Color más oscuro para el hover del botón */
+    border-color: #c5a44f; /* Borde dorado más oscuro al pasar el mouse */
+}
+
+/* Estilos del panel lateral */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px; /* Ajuste del ancho del panel */
+    height: calc(100% - 80px); /* Ajuste para que no toque el footer */
+    background: #ffffff; /* Fondo blanco para el panel */
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3); /* Sombra más prominente */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+}
+
+.side-panel.open {
+    transform: translateX(0);
+}
+
+.side-panel .close-btn {
+    display: block;
+    padding: 15px;
+    text-align: right;
+    font-size: 28px; /* Tamaño de fuente más grande para el botón de cerrar */
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+}
+
+.side-panel h3 {
+    padding: 15px;
+    margin: 0;
+    background: #c5a44f; /* Fondo dorado para el título del panel */
+    color: #fff;
+    font-size: 20px; /* Tamaño del texto del título */
+    font-weight: 600; /* Fuente más gruesa */
+}
+
+.side-panel #resumenReserva {
+    padding: 15px;
+    font-size: 16px; /* Tamaño de fuente más grande para el resumen */
+    color: #333; /* Color del texto del resumen */
+}
+
+.side-panel button {
+    margin: 15px;
+    width: 90%;
+    background: #c5a44f; /* Botón dorado en el panel lateral */
+    color: #fff;
+    border: 2px solid #c5a44f; /* Borde dorado */
+    border-radius: 4px; /* Bordes redondeados en el botón */
+    padding: 10px; /* Padding adicional para el botón */
+    font-size: 16px; /* Tamaño del texto en el botón */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Transiciones suaves */
+}
+
+.side-panel button:hover {
+    background: #c5a44f; /* Color más oscuro para el hover del botón en el panel lateral */
+    border-color: #c5a44f; /* Borde dorado más oscuro al pasar el mouse */
+}
+

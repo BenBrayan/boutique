@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Boutique Angels</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!--CSS-->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/login/styles.css" rel="stylesheet">
+
+
+    <style>
+        .whatsapp-btn {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.whatsapp-btn img {
+    width: 35px;
+    height: 35px;
+}
+
+    </style>
+</head>
+
+<body>
+    <a href="https://wa.me/573133670007" class="whatsapp-btn" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>    
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5 html,body">
+            <img src="../../img/logo.png" alt="Logo" style="width: 130px; height: auto;">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav m-auto py-0">
+                    <a href="index.html"  class="nav-item nav-link active">Inicio</a>
+                    <a href="eventos.html" class="nav-item nav-link">Eventos</a>
+                    <a href="servicios.html" class="nav-item nav-link">Servicios</a>
+                    <a href="cotizar.html" class="nav-item nav-link">Cotizar</a>
+        
+              
+                    <div class="nav-item dropdown">
+                        <a href="index.html#nosotros" class="nav-link nav-link" data-toggle="dropdown">Nosotros</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+            
+                        </div>
+                    </div>
+                </div>
+                <a href="#" id="mostrarFormulario" class="btn btn-primary d-none d-lg-block">Iniciar Sesión</a>
+                <span class="mx-3" style="border-right: 0px solid; height: 24px;"></span> 
+                <a href="reserva.html#reserva" class="btn btn-primary d-none d-lg-block">Reserva</a>
+            </div>
+        </nav>
+    </div>
+
+ 
+<!--Iniciar Sesión-->
+<div id="login-wrapper">
+
+    <div class="u-form u-radius-20 u-white u-form-1" id="loginForm">
+        <form  action="/clientes/login" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 23px;">
+            <h4 class="u-align-center u-form-group u-form-text u-text u-text-2">Iniciar sesión </h4>
+            <div class="u-form-group u-form-name">
+                <label class="u-custom-font u-font-roboto u-label">Correo</label>
+                <input type="text"  placeholder="Ingresa tu correo electrónico" name="correo" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required>
+            </div>
+            <div class="u-form-email u-form-group">
+                <label class="u-custom-font u-font-roboto u-label">Contraseña</label>
+                <div class="password-wrapper">
+                    <input type="password" id="passwordInput"  placeholder="Ingresa tu contraseña" name="contrasena" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required>
+                    <span class="toggle-password">
+                        <i id="toggleIcon" class="fa fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+            <div  class="u-align-right u-form-group u-form-submit">
+                <button class="boton enviar u-border-3 u-btn u-btn-round u-button-style u-custom-font u-radius u-btn-1">Ingresar</button>
+            </div>
+            <p class="u-align-center">No tienes cuenta? <a href="#" id="showRegisterForm">Regístrate</a></p>
+            <p class="u-align-center"><a href="#" id="showForgotPasswordForm">¿Olvidaste tu contraseña?</a></p>
+        </form>
+    </div>
+
+    <div id="confirmationMessage" style="display: none; padding: 20px; background-color: #c5a44f ; color: #3c763d; border: 1px solid #d6e9c6; border-radius: 5px;">
+        <p>Formulario enviado con éxito.</p>
+    </div>  
+
+<!--Registrarse-->
+
+  <div class="u-form u-radius-20 u-white u-form-1" id="registerForm" style="display: none;">
+        <form action="/clientes/registro" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 23px;">
+            <h4 class="u-align-center u-form-group u-form-text u-text u-text-2">Regístrate</h4>
+            <div class="u-form-group u-form-name">
+                <label class="u-custom-font u-font-roboto u-label">Nombres</label>
+                <input type="text"  placeholder="Ingresa tu nombre" name="nombres" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required maxlength="15">
+            </div>
+            <div class="u-form-group u-form-name">
+                <label class="u-custom-font u-font-roboto u-label">Apellidos</label>
+                <input type="text"  placeholder="Ingresa apellidos" name="apellidos" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required>
+            </div>
+            <div class="u-form-group u-form-email">
+                <label class="u-custom-font u-font-roboto u-label">Dirección</label>
+                <input type="text" placeholder="Ingresa tu direccion" name="direccion" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10"  required> 
+            </div>
+            <div class="u-form-group u-form-email">
+                <label class="u-custom-font u-font-roboto u-label">Celular</label>
+                <input type="tel" placeholder="Ingresa tu número de celular" name="celular" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10"  title="El número debe tener 10 dígitos" required> 
+            </div>
+            <div class="u-form-group u-form-email">
+                <label class="u-custom-font u-font-roboto u-label">Correo</label>
+                <input type="email" placeholder="Ingresa tu correo electrónico" name="correo" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required>
+            </div>
+            <div class="u-form-group">
+                <label class="u-custom-font u-font-roboto u-label">Contraseña</label>
+                <div class="password-wrapper">
+                    <input type="password" id="passwordInput"  placeholder="Ingresa una contraseña" name="contrasena" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required>
+                    <span class="toggle-password">
+                        <i id="toggleIcon" class="fa fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="u-align-right u-form-group u-form-submit">
+                <button class="boton enviar u-border-3 u-btn u-btn-round u-button-style u-custom-font u-radius u-btn-1">Registrarse</button>
+            </div>
+            <p class="u-align-center">¿Ya tienes cuenta? <a href="#" id="showLoginForm">Inicia sesión</a></p>
+        </form>
+    </div>
+
+  <!--Olvidar contraseña-->
+
+    <div class="u-form u-radius-20 u-white u-form-1" id="forgotPasswordForm" style="display: none;">
+        <form action="/clientes/recuperar-contrasena" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 23px;">
+            <h4 class="u-align-center u-form-group u-form-text u-text u-text-2">Recuperar Contraseña</h4>
+            <div class="u-form-group u-form-email">
+                <label class="u-custom-font u-font-roboto u-label">Correo</label>
+                <input type="email" placeholder="Ingresa tu correo electrónico" name="correo" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required>
+            </div>
+            <div class="u-form-group">
+                <label class="u-custom-font u-font-roboto u-label">Nueva contraseña</label>
+                <div class="password-wrapper">
+                    <input type="password" placeholder="Nueva contraseña" name="nueva_contrasena" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required>
+                    <span class="toggle-password">
+                        <i id="toggleIcon" class="fa fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="u-form-group u-form-email">
+                <label class="u-custom-font u-font-roboto u-label">Vuelve a escribir la contraseña</label>
+                <div class="password-wrapper">
+                    <input type="password" placeholder="Vuelve a escribir la contraseña" name="repita_contrasena" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required>
+                    <span class="toggle-password">
+                        <i id="toggleIcon" class="fa fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="u-align-right u-form-group u-form-submit">
+                <button class="boton enviar u-border-3 u-btn u-btn-round u-button-style u-custom-font u-radius u-btn-1">Guardar</button>
+            </div>
+            <p class="u-align-center">¿Recordaste tu contraseña? <a href="#" id="showLoginFormFromForgot">Inicia sesión</a></p>
+        </form>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <div class="footer container-fluid position-relative bg-dark py-5" style="margin-top: 90px;">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-lg-6 pr-lg-5 mb-5">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="mb-3 text-white"><span class="text-primary">Boutique</span> Angels</h1>
+                    </a>
+                    <p>Nosotros realizamos los mejores eventos</p>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>Paipa, Colombia</p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+57 3133677007</p>
+                    <p><i class="fa fa-envelope mr-2"></i>boutique@gmail.com</p>
+                    <div class="d-flex justify-content-start mt-4">
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href=><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="https://www.facebook.com/boutiqueangels.paipa"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 pl-lg-5">
+                    <div class="row">
+                        <div class="col-sm-6 mb-5">
+                            <h5 class="text-white text-uppercase mb-6">Inicio</h5>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+                                <a class="text-white-50 mb-2" href="eventos.html"><i class="fa fa-angle-right mr-2"></i>Eventos</a>
+                                <a class="text-white-50 mb-2" href="servicios.html"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
+                                <a class="text-white-50 mb-2" href="cotizar.html"><i class="fa fa-angle-right mr-2"></i>Cotiza</a>
+                                <a class="text-white-50" href="contactanos.html"><i class="fa fa-angle-right mr-2"></i>Contactanos</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 mb-5">
+                            <h5 class="text-white text-uppercase mb-6">Registrarse</h5>
+                            <div class="w-100">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-light" style="padding: 20px;" placeholder="Email ">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary px-4">Enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-light border-top py-4" style="border-color: rgba(256, 256, 256, .15) !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                    <p class="m-0 text-white">&copy; <a href="#">Boutique Angels</a>. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Termina -->
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/waypoints/waypoints.min.js"></script>
+    <script src="/lib/counterup/counterup.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="/mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- JS -->
+    <script src="/js/main.js"></script>
+    <script src="/js/login/ini.js"></script>
+
